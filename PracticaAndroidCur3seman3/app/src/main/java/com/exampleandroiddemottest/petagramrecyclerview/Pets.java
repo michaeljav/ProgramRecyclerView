@@ -16,6 +16,7 @@ public class Pets {
 
 
     public Pets(int imageMain,String namePets, int countRating) {
+        this.imageMain = imageMain;
         this.namePets = namePets;
         this.countRating = countRating;
     }

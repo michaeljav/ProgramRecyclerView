@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="40dp"
+
     card_view:cardCornerRadius="@dimen/corner_cv">
 
     <LinearLayout
@@ -34,13 +35,14 @@
 
                     <ImageView
                         android:id="@+id/imgBoneWhite"
-                      android:layout_marginTop="2dp"
-                        android:layout_width="40px"
+                        android:layout_width="22dp"
                         android:layout_height="40px"
-                        android:scaleType="centerCrop"
-                        android:background="@drawable/dog_bone_white__52"
                         android:layout_marginLeft="@dimen/marginRightBone"
-                        android:layout_marginRight="@dimen/marginRightBone"/>
+                        android:layout_marginRight="@dimen/marginRightBone"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/dog_bone_white__52"
+                        android:paddingTop="100px"
+                        android:scaleType="centerCrop" />
 
                     <TextView
                         android:id="@+id/textBoneWhite"

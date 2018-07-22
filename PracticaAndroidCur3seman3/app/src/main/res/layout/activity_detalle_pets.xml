@@ -6,11 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".DetallePets">
 
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar"
 
+       />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvPetDetalles"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/miActionBar"
+        android:layout_marginTop="60dp"
+        />
 
 </android.support.constraint.ConstraintLayout>

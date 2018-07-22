@@ -48,39 +48,27 @@ public class PetsAdapter  extends  RecyclerView.Adapter<PetsAdapter.PetsViewHold
     //asi va extrayendo los elementos de cada lista
 
     @Override
-    public void onBindViewHolder(@NonNull PetsViewHolder petsViewHolder, int position) {
+    public void onBindViewHolder(@NonNull final PetsViewHolder petsViewHolder, int position) {
 
             final  Pets pets  = petsArrayLi.get(position);
 
-//            petsViewHolder.imgPhotoMain.setImageResource(pets.getImageMain());
-//             petsViewHolder.textBoneWhite.setText(pets.getNamePets());
-//              petsViewHolder.textBoneYellow.setText(pets.getCountRating());
+              petsViewHolder.imgPhotoMain.setImageResource(pets.getImageMain());
+              petsViewHolder.textBoneWhite.setText(pets.getNamePets());
+              petsViewHolder.textBoneYellow.setText(String.valueOf(pets.getCountRating()));
 
 
-        petsViewHolder.imgPhotoMain.setImageResource(pets.getImageMain());
-        petsViewHolder.textBoneWhite.setText("");
-        petsViewHolder.textBoneYellow.setText("");
+              petsViewHolder.imgBoneWhite.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View view) {
+
+                     pets.setCountRating(pets.getCountRating()+1);
+                     petsViewHolder.textBoneYellow.setText(String.valueOf(pets.getCountRating()));
+                    //  Toast.makeText(activity,String.valueOf(pets.getCountRating()),Toast.LENGTH_SHORT).show();
+                  }
+              });
 
 
 
-       /* contactoViewHolder.imgFoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(activity,contacto.getNombre(),Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(activity,DetalleContacto.class);
-                intent.putExtra(activity.getResources().getString(R.string.pNombre),contacto.getNombre());
-                intent.putExtra(activity.getResources().getString(R.string.pTelefono),contacto.getTelefono());
-                intent.putExtra(activity.getResources().getString(R.string.pEmail),contacto.getEmail());
-                activity.startActivity(intent);
-            }
-        });
-
-        contactoViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(activity,"Diste like a "+ contacto.getNombre(),Toast.LENGTH_SHORT).show();
-            }
-        });*/
     }
 
     @Override
@@ -88,13 +76,16 @@ public class PetsAdapter  extends  RecyclerView.Adapter<PetsAdapter.PetsViewHold
         return petsArrayLi.size();
     }
 
+
+
+
     public static  class PetsViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView imgPhotoMain;
         private  ImageView imgBoneWhite;
         private TextView textBoneWhite;
         private TextView  textBoneYellow;
-        private  ImageView imgBoneYellow;
+
 
 
         public PetsViewHolder(@NonNull View itemView) {
@@ -103,7 +94,7 @@ public class PetsAdapter  extends  RecyclerView.Adapter<PetsAdapter.PetsViewHold
             this.imgBoneWhite = itemView.findViewById(R.id.imgBoneWhite);
             this.textBoneWhite = itemView.findViewById(R.id.textBoneWhite);
             this.textBoneYellow = itemView.findViewById(R.id.textBoneYellow);
-            this.imgBoneYellow = itemView.findViewById(R.id.imgBoneYellow);
+
         }
 
 
